@@ -31,7 +31,7 @@ def print_image(image):
         row = [f"{image.getpixel((i, j)):3}" for i in range(width)]
         print(" ".join(row))
 
-# read file dari filepath
+# Membaca file dari filepath
 input_image = Image.open('d:/Kuliah/Semester 7 Bismillah YaAllah/Pengolahan Citra Digital dan Visi Komputer/Tugas 1/input_image.jpeg').convert('L')  # Mengubah menjadi grayscale
 
 # Increase kecerahan dan kontras
@@ -41,11 +41,16 @@ contrast_factor = 1.5
 bright_image = increase_brightness(input_image, brightness_value)
 contrast_image = increase_contrast(bright_image, contrast_factor)
 
-# Menyimpan result
+# Menyimpan hasil perbaikan citra
 bright_image.save('d:/Kuliah/Semester 7 Bismillah YaAllah/Pengolahan Citra Digital dan Visi Komputer/Tugas 1/bright_image.jpeg')
 contrast_image.save('d:/Kuliah/Semester 7 Bismillah YaAllah/Pengolahan Citra Digital dan Visi Komputer/Tugas 1/contrast_image.jpeg')
 
-# Menampilkan hasil perbaikan citra
+# Menampilkan hasil di layar
+input_image.show()         # show image yang asli
+bright_image.show()        # show image yang di increase brightness nya
+contrast_image.show()      # show image yang di increase kontras nya
+
+# Menampilkan hasil perbaikan citra di terminal (jika ingin dicetak sebagai array)
 print("Citra Asli:")
 print_image(input_image)
 
